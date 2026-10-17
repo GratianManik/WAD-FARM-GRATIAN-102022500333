@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Bengkel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: #1e3a5f;
+            margin-top: 0;
+        }
+
+        .deskripsi {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tambah Data Bengkel</h1>
+        <p class="deskripsi">
+            Sistem Informasi Rental Mobil — Modul D Bengkel Maintenance
+        </p>
+
+        <!-- Arahkan action ke file pemroses PHP Anda -->
+        <form action="index.php" method="POST">
+
+            <div class="field">
+                <label for="nama_bengkel">Nama Bengkel *</label>
+                <input type="text" id="nama_bengkel" name="nama_bengkel" maxlength="100" required>
+            </div>
+
+            <div class="field">
+                <label for="alamat">Alamat *</label>
+                <textarea id="alamat" name="alamat" required></textarea>
+            </div>
+
+            <div class="field">
+                <label for="kota">Kota *</label>
+                <input type="text" id="kota" name="kota" maxlength="100" required>
+            </div>
+
+            <div class="field">
+                <label for="nomor_telepon">Nomor Telepon *</label>
+                <input type="tel" id="nomor_telepon" name="nomor_telepon" maxlength="20" required>   
+            </div>
+
+            <div class="field">
+                <label for="email">Email (Opsional)</label>
+                <input type="email" id="email" name="email" maxlength="100">   
+            </div>
+
+            <div class="field">
+                <label for="jenis_layanan">Jenis Layanan *</label>
+                <select id="jenis_layanan" name="jenis_layanan" required>
+                    <option value="">-- Pilih Layanan --</option>
+                    <option value="Service Mesin">Service Mesin</option>
+                    <option value="Ganti Oli">Ganti Oli</option>
+                    <option value="Service Rem">Service Rem</option>
+                    <option value="Service AC">Service AC</option>
+                    <option value="Ganti Ban">Ganti Ban</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="status">Status Bengkel *</label>
+                <select id="status" name="status" required>
+                    <option value="Aktif">Aktif</option>
+                    <option value="Tidak Aktif">Tidak Aktif</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Simpan Data Bengkel</button>
+
+        </form>
+    </div>
+</body>
+</html>
